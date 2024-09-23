@@ -1,0 +1,217 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f3f3f3 25%, #ffffff 75%);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header and Navbar with 3D Shadow */
+.main-header {
+    background: linear-gradient(145deg, #6a89cc, #4a69bd);
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 50px 0;
+    text-align: center;
+    font-size: 2.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.main-header:hover {
+    transform: translateY(-5px);
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav-bar ul li {
+    margin: 0 20px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-bar ul li a:hover {
+    color: #add8e6; /* Light blue hover effect */
+    transform: scale(1.1);
+}
+
+.nav-bar ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #add8e6; /* Light blue underline effect */
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-bar ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Hero Section with 3D Perspective */
+.hero-section {
+    background: radial-gradient(circle at center, #6a89cc, #4a69bd);
+    color: white;
+    text-align: center;
+    padding: 100px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h2 {
+    font-size: 3rem;
+    perspective: 1000px;
+    transform: rotateY(10deg);
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+    font-size: 1.4rem;
+    margin-top: 20px;
+}
+
+.hero-image-container {
+    margin-top: 30px;
+    perspective: 1500px;
+    transform: rotateY(-15deg);
+}
+
+.hero-image {
+    width: 70%;
+    border-radius: 50px;
+    border: 10px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.5s ease, filter 0.5s ease, border-color 0.5s ease;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-image:hover {
+    transform: rotateY(15deg) rotateZ(5deg);
+    filter: brightness(1.2) saturate(1.1);
+    border-color: #add8e6; /* Light blue border on hover */
+}
+
+/* Content Section with CSS Grid Layout and Shapes */
+.content-section {
+    padding: 40px;
+    margin: 30px 50px;
+    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    
+    grid-template-columns: 1fr 1fr;
+    
+    align-items: center;
+    transition: background 0.5s ease;
+}
+
+.content-section:hover {
+    background: linear-gradient(145deg, #add8e6, #e0ffff); /* Light blue gradient hover effect */
+}
+
+.content-section h3 {
+    font-size: 2rem;
+    text-align: center;
+    grid-column: span 2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2c3e50;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.content-section ul {
+    list-style: none;
+}
+
+.content-section ul li::before {
+    content: '-';
+    color: #27ae60;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.shape-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    padding-top: 50px;
+}
+
+.shape-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 204, 0, 0.1);
+    z-index: -1;
+}
+
+
+/* 3D Shape Animation */
+@keyframes rotate {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Footer with Layered Effects */
+.main-footer {
+    background: #2b27ae;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.main-footer::before, .main-footer::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(145deg, #120cb0, #120cb0);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.main-footer::after {
+    top: auto;
+    bottom: -15px;
+    transform: rotate(180deg);
+}
